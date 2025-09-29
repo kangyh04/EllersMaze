@@ -16,6 +16,7 @@ vector<vector<Cell>> EllersAlgorithm::Generate(int width, int height)
 
 	for (int x = 0; x < height; ++x)
 	{
+		auto newRow = vector<Cell>();
 		if (x == height - 1)
 		{
 			for (auto cell = row.begin(); cell != row.end(); ++cell)
@@ -43,33 +44,21 @@ vector<vector<Cell>> EllersAlgorithm::Generate(int width, int height)
 
 			CreateRightWall(row);
 			CreateBottomWall(row);
-			row = PrepareNextRow(row, x, width);
+			newRow = PrepareNextRow(row, x, width);
 		}
 		maze.push_back(row);
+		row = newRow;
 	}
 
 	return maze;
-}
-
-// void EllersAlgorithm::InitializeSets(vector<Cell>& row)
-// {
-// 	for (int i = 0; i < row.size(); ++i)
-// 	{
-// 		auto cell = row[i];
-// 	}
-// }
-
-void EllersAlgorithm::WriteRowIntoMaze(int h)
-{
-
 }
 
 void EllersAlgorithm::CreateRightWall(vector<Cell>& cells)
 {
 	for (int i = 0; i < cells.size() - 1; ++i)
 	{
-		auto cell = cells[i];
-		auto nextCell = cells[i + 1];
+		auto& cell = cells[i];
+		auto& nextCell = cells[i + 1];
 		if (CreateWall())
 		{
 			cell.SetRightWall(true);
@@ -84,7 +73,7 @@ void EllersAlgorithm::CreateRightWall(vector<Cell>& cells)
 		}
 	}
 
-	auto lastCell = cells[cells.size() - 1];
+	auto& lastCell = cells[cells.size() - 1];
 	lastCell.SetRightWall(true);
 }
 
@@ -93,7 +82,7 @@ void EllersAlgorithm::CreateBottomWall(vector<Cell>& cells)
 	auto groupedCell = map<int, vector<Cell*>>();
 	for (int i = 0; i < cells.size(); ++i)
 	{
-		auto cell = cells[i];
+		auto& cell = cells[i];
 		groupedCell[cell.Group()].push_back(&cell);
 	}
 

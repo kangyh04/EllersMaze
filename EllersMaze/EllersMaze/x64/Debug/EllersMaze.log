@@ -1,0 +1,12 @@
+﻿  Maze.cpp
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(101,59): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(101,59): warning C4267:         with
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(101,59): warning C4267:         [
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(101,59): warning C4267:             _Ty=int
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(101,59): warning C4267:         ]
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(102,67): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(102,67): warning C4267:         with
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(102,67): warning C4267:         [
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(102,67): warning C4267:             _Ty=int
+D:\Studying\EllersMaze\EllersMaze\Maze.cpp(102,67): warning C4267:         ]
+  EllersMaze.vcxproj -> D:\Studying\EllersMaze\EllersMaze\x64\Debug\EllersMaze.exe
